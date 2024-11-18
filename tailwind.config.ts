@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type {Config} from "tailwindcss";
 
 export default {
     content: [
@@ -15,6 +15,9 @@ export default {
             fontSize: { // Correct key (not "fontsize")
                 'xxs': '0.5rem', // Extra small font size
             },
+            borderRadius: {
+                'xxl': '1.5rem',
+            }
         },
     },
     plugins: [],
