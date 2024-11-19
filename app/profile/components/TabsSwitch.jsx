@@ -5,7 +5,7 @@ const SwitchButton = () => {
     const [activeTab, setActiveTab] = useState('Orders');
 
     return (
-        <div className="flex justify-center items-center bg-gray-100 rounded-full p-2">
+        <div className="flex justify-center items-center  bg-gray-100 rounded-full p-2 ml-10">
             {/* Orders Button */}
             <button
                 onClick={() => setActiveTab('Orders')}
