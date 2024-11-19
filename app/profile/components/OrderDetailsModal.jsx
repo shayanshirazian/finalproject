@@ -7,10 +7,10 @@ const OrderDetailsModal = ({isOpen, onClose, orderDetails}) => {
 
     return (
         // other Opened Box
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+        <div className="fixed inset-1 bg-gray-800 bg-opacity-50 flex justify-center items-center">
 
             {/*box Style*/}
-            <div className="bg-white rounded-xxl shadow-lg w-3/4 max-w-lg p-3">
+            <div className=" bg-white rounded-xxl shadow-lg w-3/4 max-w-lg p-3">
 
                 {/*header*/}
                 <div>
@@ -25,14 +25,14 @@ const OrderDetailsModal = ({isOpen, onClose, orderDetails}) => {
 
                 {/*each dog*/}
                 {/*box*/}
-                <div className="rounded-lg  border border-grey-200 m-3 ">
+                <div className="dogboxes rounded-lg  border border-grey-200 m-3 ">
 
                     {/*orderDetailStyle*/}
                     {/*name and status*/}
                     <div className="flex justify-between m-2">
 
                         {/*dog name*/}
-                        <span className="text-green-900  font-bold">{orderDetails.dogNames[1]} </span>
+                        <span className="text-green-900  font-bold">{orderDetails.dogNames?.[1]} </span>
 
                         {/*status*/}
                         <span
@@ -54,7 +54,7 @@ const OrderDetailsModal = ({isOpen, onClose, orderDetails}) => {
 
                     {/*status*/}
                     <div className="flex justify-between m-2">
-                        <span className="text-gray-500">Status:</span>
+                        <span className="text-gray-500">Recipes:</span>
                         <span className="text-green-700 ">{orderDetails.recipes}</span>
                     </div>
 
@@ -75,7 +75,7 @@ const OrderDetailsModal = ({isOpen, onClose, orderDetails}) => {
                     <div className="flex justify-between m-2">
 
                         {/*dog name*/}
-                        <span className="text-green-900  font-bold">{orderDetails.dogNames[1]} </span>
+                        <span className="text-green-900  font-bold">{orderDetails.dogNames?.[1]} </span>
 
                         {/*status*/}
                         <span
@@ -97,7 +97,7 @@ const OrderDetailsModal = ({isOpen, onClose, orderDetails}) => {
 
                     {/*status*/}
                     <div className="flex justify-between m-2">
-                        <span className="text-gray-500">Status:</span>
+                        <span className="text-gray-500">Recipes:</span>
                         <span className="text-green-700 ">{orderDetails.recipes}</span>
                     </div>
 
@@ -118,7 +118,7 @@ const OrderDetailsModal = ({isOpen, onClose, orderDetails}) => {
                     <div className="flex justify-between m-2">
 
                         {/*dog name*/}
-                        <span className="text-green-900  font-bold">{orderDetails.dogNames[1]} </span>
+                        <span className="text-green-900  font-bold">{orderDetails.dogNames?.[1]} </span>
 
                         {/*status*/}
                         <span
@@ -140,7 +140,7 @@ const OrderDetailsModal = ({isOpen, onClose, orderDetails}) => {
 
                     {/*status*/}
                     <div className="flex justify-between m-2">
-                        <span className="text-gray-500">Status:</span>
+                        <span className="text-gray-500">Recipes:</span>
                         <span className="text-green-700 ">{orderDetails.recipes}</span>
                     </div>
 
