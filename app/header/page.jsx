@@ -1,12 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 
-
 const Header = () => {
     return (
-        <header className="flex  items-center px-6 py-4 p-3 bg-gray-100 shadow-sm ">
-                  <span className=" ml-32 mr-80 text-lg font-bold text-green-700">{`Cola's Kitchen`}</span>
-            <nav className="flex space-x-8 text-sm font-medium text-gray-700">
+        <header className="flex items-center justify-between px-6 py-4 bg-gray-100 shadow-sm">
+            {/* Cola's Kitchen Text */}
+            <span className="text-lg font-bold text-green-700 lg:ml-32">
+                {`Cola's Kitchen`}
+            </span>
+
+            {/* Navigation Links */}
+            <nav className="flex justify-center w-full lg:w-auto space-x-4 lg:space-x-8 text-sm  font-medium text-gray-700">
                 <ul className="hover:font-bold hover:text-green-700 hover:border-b-2 hover:border-green-700">
                     <li>
                         <Link href={"/profile"}> Profile </Link>
@@ -34,7 +38,6 @@ const Header = () => {
                 </ul>
             </nav>
         </header>
-
     );
 };
 
