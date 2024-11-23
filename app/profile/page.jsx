@@ -235,3 +235,4 @@ const Profile = () => {
 
 export default Profile;
 // Exports the `Profile` component to be used in other parts of the application.
+
