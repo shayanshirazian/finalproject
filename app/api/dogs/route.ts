@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+// Define the Dog type
 type Dog = {
     dogName: string;
     recipes: string;
@@ -8,6 +9,7 @@ type Dog = {
     status: string;
 };
 
+// Initial Data
 let data: Dog[] = [
     {
         dogName: "Cola",
@@ -46,34 +48,51 @@ let data: Dog[] = [
     },
 ];
 
+// Utility Function: Validate Request Body
+function validateRequestBody(body: any) {
+    const { dogName, deliveryDate } = body;
+
+    if (!dogName || !deliveryDate) {
+        return { valid: false, error: "dogName and deliveryDate are required." };
+    }
+
+    const isValidDate = /^\d{4}-\d{2}-\d{2}$/.test(deliveryDate);
+    if (!isValidDate) {
+        return {
+            valid: false,
+            error: "Invalid deliveryDate format. Use 'YYYY-MM-DD'.",
+        };
+    }
+
+    return { valid: true };
+}
+
+// Utility Function: Find Dog by Name
+function findDogByName(dogName: string) {
+    const dogIndex = data.findIndex((dog) => dog.dogName === dogName);
+    return dogIndex;
+}
+
+// GET Handler: Return All Data
 export async function GET() {
     return NextResponse.json(data);
 }
 
+// PUT Handler: Update Delivery Date
 export async function PUT(req: Request) {
     try {
         const body = await req.json();
-        const { dogName, deliveryDate } = body;
+        const validation = validateRequestBody(body);
 
         // Validate input
-        if (!dogName || !deliveryDate) {
-            return NextResponse.json(
-                { error: "Invalid request: dogName and deliveryDate are required." },
-                { status: 400 }
-            );
+        if (!validation.valid) {
+            return NextResponse.json({ error: validation.error }, { status: 400 });
         }
 
-        // Validate deliveryDate format
-        const isValidDate = /^\d{4}-\d{2}-\d{2}$/.test(deliveryDate);
-        if (!isValidDate) {
-            return NextResponse.json(
-                { error: "Invalid deliveryDate format. Use 'YYYY-MM-DD'." },
-                { status: 400 }
-            );
-        }
+        const { dogName, deliveryDate } = body;
 
-        // Find and update the relevant dog
-        const dogIndex = data.findIndex((dog) => dog.dogName === dogName);
+        // Find the dog to update
+        const dogIndex = findDogByName(dogName);
         if (dogIndex === -1) {
             return NextResponse.json(
                 { error: `Dog with name "${dogName}" not found.` },
@@ -81,7 +100,8 @@ export async function PUT(req: Request) {
             );
         }
 
-        data[dogIndex].deliveryDate = deliveryDate; // Update the delivery date
+        // Update the delivery date
+        data[dogIndex].deliveryDate = deliveryDate;
 
         return NextResponse.json({
             message: "Delivery date updated successfully.",
@@ -96,4 +116,3 @@ export async function PUT(req: Request) {
         );
     }
 }
-

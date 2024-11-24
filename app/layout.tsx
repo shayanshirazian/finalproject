@@ -1,8 +1,6 @@
 import type {Metadata} from "next";
-
 import "./globals.css";
 import Header from "./header/page";
-
 
 export const metadata: Metadata = {
     title: "Cola's Cart",
@@ -18,10 +16,8 @@ export default function RootLayout({
         <html lang="en">
         <body className={`antialiased`}>
         <Header/>
-
-
         {children}
         </body>
         </html>
     );
-}
+};
