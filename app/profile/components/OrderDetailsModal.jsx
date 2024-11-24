@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import "./Divider"
 import ModalHeader from "../components/ModalHeader";
+// title and close button of the modal.
 import ModalContent from "../components/ModalContent";
+// details and editable fields of the modal.
 import ModalActions from "../components/ModalActions";
+// buttons for save, cancel, or edit actions.
 import Divider from "./Divider";
 
 const OrderDetailsModal = ({ isOpen, onClose, orderDetails, onSave }) => {

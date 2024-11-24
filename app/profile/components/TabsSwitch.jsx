@@ -2,7 +2,6 @@
 // Indicates that this component will run on the client side in a Next.js application.
 
 import React, {useState} from "react";
-// Imports React for building the component and the `useState` hook for managing local state.
 
 const SwitchButton = () => {
     // Declares the `SwitchButton` functional component.

@@ -1,6 +1,5 @@
 import React from "react";
 import "./Divider"
-import Divider from "./Divider";
 // Imports React to create and use the component.
 
 const TabFutureOrders = ({orders, onOpenModal}) => {
