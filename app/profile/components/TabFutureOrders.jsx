@@ -1,4 +1,6 @@
 import React from "react";
+import "./Divider"
+import Divider from "./Divider";
 // Imports React to create and use the component.
 
 const TabFutureOrders = ({orders, onOpenModal}) => {
@@ -33,8 +35,7 @@ const TabFutureOrders = ({orders, onOpenModal}) => {
                         </span>
                 </div>
 
-                <div className="m-3 border-t border-gray-300"></div>
-                {/* Divider line between sections. */}
+                <Divider/>
 
                 <div className="flex justify-between m-2">
                     {/* Row displaying the portion information. */}
@@ -44,38 +45,37 @@ const TabFutureOrders = ({orders, onOpenModal}) => {
                     {/* Displays the portion details in green text. */}
                 </div>
 
-                <div className="m-3 border-t border-gray-300"></div>
-                {/* Divider line between sections. */}
+                <Divider/>
 
-                <div className="flex justify-between m-2">
+                <div className="flex justify-between items-center m-2">
                     {/* Row displaying the recipe information. */}
                     <span className="text-gray-500 ml-3">Recipes:</span>
                     {/* Label with light gray text. */}
+
                     <span className="text-green-700 mr-3">{order.recipes}</span>
                     {/* Displays the recipe details in green text. */}
                 </div>
 
-                <div className="m-3 border-t border-gray-300"></div>
-                {/* Divider line between sections. */}
+                <Divider/>
+                <div className="flex  justify-between m-2">
+                    {/* Row for Delivery Date and Edit Button */}
+                    <span className="text-gray-500 w-[150px]">Delivery Date:</span>
 
-                <div className="flex justify-between m-2">
-                    {/* Row displaying the delivery date and an edit button. */}
-                    <div className="flex items-center justify-around">
-                        <span className="text-gray-500 mr-96 ml-3">Delivery Date:</span>
-                        {/* Label for the delivery date with gray text. */}
-                        <span className="text-green-700 font-bold ml-20">
-                                {order.deliveryDate}
-                            {/* Displays the delivery date in bold green text. */}
-                            </span>
+                    <div className="flex items-center">
+                        {/* Label for the delivery date with fixed width */}
+                        <span className="text-green-700 font-bold w-[120px] text-center flex flex-row justify-end">
+      {order.deliveryDate}
+                            {/* Delivery date with fixed width */}
+                            <img
+                                src="/Edit.svg"
+                                alt="editbtn"
+                                className="h-5 cursor-pointer"
+                                // Adjusted height for better visibility
+                                onClick={() => onOpenModal(order)}
+                                // Click event to open the modal
+                            />
+                        </span>
                     </div>
-                    <img
-                        src="/Edit.svg"
-                        alt="editbtn"
-                        className="h-3.5 cursor-pointer ml-1 mr-3"
-                        // Styles the edit button with a small size and pointer cursor on hover.
-                        onClick={() => onOpenModal(order)}
-                        // Calls `onOpenModal` with the current order data when the button is clicked.
-                    />
                 </div>
             </div>))}
     </>);

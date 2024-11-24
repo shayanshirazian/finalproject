@@ -1,14 +1,9 @@
 import React, { useState } from "react";
-// Imports React and the `useState` hook to manage local state.
-
+import "./Divider"
 import ModalHeader from "../components/ModalHeader";
-// Imports the `ModalHeader` component, which handles the title and close button of the modal.
-
 import ModalContent from "../components/ModalContent";
-// Imports the `ModalContent` component, which displays the details and editable fields of the modal.
-
 import ModalActions from "../components/ModalActions";
-// Imports the `ModalActions` component, which provides buttons for save, cancel, or edit actions.
+import Divider from "./Divider";
 
 const OrderDetailsModal = ({ isOpen, onClose, orderDetails, onSave }) => {
   // Defines the `OrderDetailsModal` component with the following props:
@@ -57,10 +52,7 @@ const OrderDetailsModal = ({ isOpen, onClose, orderDetails, onSave }) => {
           <ModalHeader title="Order Details" onClose={onClose} />
           {/* Uses the `ModalHeader` component to display the modal title and a close button. */}
 
-          {/* Divider */}
-          <div className="m-2 border-t border-gray-300"></div>
-          {/* Adds a horizontal divider below the header. */}
-
+          <Divider/>
           {/* Modal Content */}
           <ModalContent
               orderDetails={orderDetails}
@@ -71,9 +63,7 @@ const OrderDetailsModal = ({ isOpen, onClose, orderDetails, onSave }) => {
           {/* Uses the `ModalContent` component to display order details, editable fields, and the delivery date. */}
           {/* Passes `orderDetails`, `isEditing`, `newDate`, and `setNewDate` as props to `ModalContent`. */}
 
-          {/* Divider */}
-          <div className="m-3 border-t border-gray-300"></div>
-          {/* Adds another horizontal divider below the content. */}
+         <Divider/>
 
           {/* Modal Actions */}
           <ModalActions

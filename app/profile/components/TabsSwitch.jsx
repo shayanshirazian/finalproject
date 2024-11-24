@@ -43,7 +43,7 @@ const SwitchButton = () => {
                 {/* Label text for the "History" button. */}
             </button>
         </div>
-    );
+     );
 };
 
 export default SwitchButton;

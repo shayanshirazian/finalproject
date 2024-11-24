@@ -1,20 +1,9 @@
 "use client";
-// Indicates that this component is designed to run on the client side in a Next.js application.
-
 import React, { useState, useEffect } from "react";
-// Imports React and React hooks: `useState` for managing state and `useEffect` for side effects like data fetching.
-
 import TabsSwitch from "./components/TabsSwitch";
-// Imports the `TabsSwitch` component, used for toggling between tabs.
-
 import OrderDetailsModal from "./components/OrderDetailsModal";
-// Imports the `OrderDetailsModal` component, used for displaying and editing order details.
-
 import TabUpcomingOrders from "./components/TabUpcomingOrders";
-// Imports the `TabUpcomingOrders` component to handle and display upcoming orders.
-
 import TabFutureOrders from "./components/TabFutureOrders";
-// Imports the `TabFutureOrders` component to handle and display future orders.
 
 const Profile = () => {
   const [orders, setOrders] = useState([]);

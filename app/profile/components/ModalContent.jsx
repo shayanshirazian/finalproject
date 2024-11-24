@@ -40,8 +40,8 @@ const ModalContent = ({orderDetails, isEditing, newDate, setNewDate}) => (
         <div className="m-3 border-t border-gray-300"></div>
 
         {/* Recipes */}
-        <div>
-            <span className="text-gray-500">Recipes</span>
+        <div className="flex justify-between">
+            <span className="text-gray-500  ">Recipes:</span>
             {/* Label styled in light gray. */}
             <span className="text-green-700">{orderDetails.recipes}</span>
             {/* Displays the recipe details in green. */}
