@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import ModalHeader from "../components/ModalHeader";
+import ModalHeader from "./ModalHeader";
 // title and close button of the modal.
-import ModalContent from "../components/ModalContent";
+import ModalContent from "./ModalContent";
 // details and editable fields of the modal.
-import ModalActions from "../components/ModalActions";
+import ModalActions from "./ModalActions";
 // buttons for save, cancel, or edit actions.
-import Divider from "./Divider";
+import Divider from "../Divider";
 
 
 const OrderDetailsModal = ({isOpen, onClose, orderDetails, onSave}) => {
@@ -65,8 +65,6 @@ const OrderDetailsModal = ({isOpen, onClose, orderDetails, onSave}) => {
                 />
                 {/* Uses the `ModalContent` component to display order details, editable fields, and the delivery date. */}
                 {/* Passes `orderDetails`, `isEditing`, `newDate`, and `setNewDate` as props to `ModalContent`. */}
-
-                <Divider/>
 
                 {/* Modal Actions */}
                 <ModalActions
