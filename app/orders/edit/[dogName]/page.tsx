@@ -1,7 +1,6 @@
 "use client";
-
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import {useState, useEffect} from "react";
+import {useRouter} from "next/navigation";
 
 type Order = {
     dogName: string;
@@ -11,8 +10,8 @@ type Order = {
     status: string;
 };
 
-const EditOrderPage = ({ params }: { params: { dogName: string } }) => {
-    const { dogName } = params; // Extract the dog name from the URL
+const EditOrderPage = ({params}: { params: { dogName: string } }) => {
+    const {dogName} = params; // Extract the dog name from the URL
     const [order, setOrder] = useState<Order | null>(null);
     const [deliveryDate, setDeliveryDate] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(true);
@@ -50,8 +49,8 @@ const EditOrderPage = ({ params }: { params: { dogName: string } }) => {
         try {
             const response = await fetch("/api/dogs", {
                 method: "PUT",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ dogName, deliveryDate }),
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({dogName, deliveryDate}),
             });
 
             if (!response.ok) throw new Error("Failed to update order");
