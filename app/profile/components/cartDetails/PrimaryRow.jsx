@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const PrimaryRow = ({dogName}) => {
     return (
         <div className="flex justify-between items-center w-full">
