@@ -1,0 +1,25 @@
+import React from "react";
+import EditPenBtn from "../buttons/EditPenBtn";
+
+const QuaternaryRow = ({title, value, isEditing, newValue, setNewValue}) => {
+    return (
+        <div className="flex justify-between items-center w-full">
+            <span className="text-gray-500 ">{title} :</span>
+            <span className="flex">
+            {isEditing ? (
+                <input
+                    type="text"
+                    value={newValue}
+                    onChange={(e) => setNewValue(e.target.value)}
+                    className="ml-3 border rounded px-2 py-1 text-green-700"
+                />
+            ) : (
+                <span className="text-green-700 mr-2">{value}</span>
+            )}
+                <EditPenBtn/>
+            </span>
+        </div>
+    );
+};
+
+export default QuaternaryRow;
