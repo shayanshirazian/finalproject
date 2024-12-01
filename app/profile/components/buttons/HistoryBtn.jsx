@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HistoryBtn = (isActive, onClick) => {
+const HistoryBtn = ({isActive, onClick}) => {
     return (
         <button
             onClick={onClick}

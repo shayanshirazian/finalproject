@@ -7,7 +7,7 @@ const ActionsModal = ({isEditing, onSave, onCancel, onEdit}) => (
     <div className="flex justify-end mt-2">
         {isEditing ? (
             <>
-                <SaveBtn onSave={onSave}/>
+                <SaveBtn onClick={onSave}/>
                 <CancelBtn onCancel={onCancel}/>
             </>
         ) : (
