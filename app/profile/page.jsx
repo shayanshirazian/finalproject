@@ -7,6 +7,7 @@ import orderDetailCard from "./components/OrderDetailCard";
 import UpcomingOrders from "./components/UpcomingOrders";
 import OrderDetailsModal from "./components/modals/OrderDetailsModal";
 import FutureOrders from "./components/FutureOrders";
+import FutureOrderDetails from "./components/modals/ContentModal";
 
 const Profile = () => {
     const [orders, setOrders] = useState([]);
@@ -92,12 +93,14 @@ const Profile = () => {
                 </div>
 
                 <div className="Upcoming Orders text-gray-600 mt-3 ml-1">
-                    <UpcomingOrders orders={orders} onOpenModal={handleOpenModal}/>
+                    <UpcomingOrders orders={orders} handleOpenModal={handleOpenModal}/>
+
                 </div>
 
                 <div>
                     <FutureOrders orders={orders} onOpenModal={handleOpenModal}/>
                 </div>
+
                 {/*<div className="text-gray-600 mt-3 ml-1">Future Orders*/}
                 {/*<div>*/}
                 {/*    {orders.map((order, index) => (*/}

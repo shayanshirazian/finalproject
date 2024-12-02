@@ -2,6 +2,7 @@ import React from "react";
 import OpenDetails from "./buttons/OpenDetails";
 
 const UpcomingOrders = ({orders, handleOpenModal}) => {
+
     if (!orders) {
         return null;
     }
@@ -34,8 +35,10 @@ const UpcomingOrders = ({orders, handleOpenModal}) => {
                         </div>
                         <div className="Right flex">
                             {/*<OpenDetails onClick={() => handleOpenModal(orderDetailsModal)}*/}
-                            <OpenDetails onClick={() => handleOpenModal(order)}
-                            />
+                            {orders[0] && (
+                                <OpenDetails onClick={() => handleOpenModal(orders[0])}/>)
+
+                            }
                         </div>
                     </div>
                 </div>
