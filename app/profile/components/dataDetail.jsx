@@ -1,7 +1,7 @@
 import React from 'react';
 import Divider from "./cartDetails/Divider";
 
-const DataDetail = ({orders}) => {
+const DataDetail = ({orders, isEditing,onOpenModal}) => {
     return (
         <>
             {Array.isArray(orders) &&
@@ -38,14 +38,17 @@ const DataDetail = ({orders}) => {
                         <div className="flex justify-between m-2">
                             <span className="text-gray-500 w-[150px] ml-3">Delivery Date:</span>
                             <div className="flex items-center">
-                            <span className="text-green-700 font-bold w-[120px] text-center flex flex-row justify-end">
+                            <span className="text-green-700 font-bold w-[120px] text-center flex flex-row justify-end mr-2">
                                 {order.deliveryDate}
-                                {/*<img*/}
-                                {/*    src="/Edit.svg"*/}
-                                {/*    alt="editbtn"*/}
-                                {/*    className="h-5 cursor-pointer mx-2 "*/}
-                                {/*    onClick={() => onOpenModal(order)} // Check if onOpenModal is a function*/}
-                                {/*/>*/}
+                                {/*{isEditing?*/}
+                                {/*    <img*/}
+                                {/*        src="/Edit.svg"*/}
+                                {/*        alt="editbtn"*/}
+                                {/*        className="h-5 cursor-pointer mx-2 "*/}
+                                {/*        onClick={() => onOpenModal(order)} // Check if onOpenModal is a function*/}
+                                {/*    />:*/}
+                                {/*    false*/}
+                                {/*}*/}
                             </span>
                             </div>
                         </div>
