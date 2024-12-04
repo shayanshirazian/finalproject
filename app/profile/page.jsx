@@ -1,13 +1,11 @@
 "use client";
 import React, {useState, useEffect} from "react";
 import "../../app/api/dogs/route"
-import TabsSwitch from "./components/TabsSwitch";
+import TabsSwitch from "./components/buttons/TabsSwitch";
 import BackBtn from "./components/buttons/BackBtn";
-import orderDetailCard from "./components/OrderDetailCard";
 import UpcomingOrders from "./components/UpcomingOrders";
 import OrderDetailsModal from "./components/modals/OrderDetailsModal";
 import FutureOrders from "./components/FutureOrders";
-import FutureOrderDetails from "./components/modals/ContentModal";
 
 const Profile = () => {
     const [orders, setOrders] = useState([]);
@@ -93,7 +91,8 @@ const Profile = () => {
                 </div>
 
                 <div className="Upcoming Orders text-gray-600 mt-3 ml-1">
-                    <UpcomingOrders orders={orders} handleOpenModal={handleOpenModal}/>
+                    <UpcomingOrders orders={orders} onOpenModal={handleOpenModal}/>
+                    {/*<UpcomingOrders orders={orders} onOpenModal={upOrderModal}/>*/}
 
                 </div>
 
