@@ -33,12 +33,12 @@ const OrderDetailsModal = ({isOpen, onClose, orderDetails, onSave}) => {
                     newDate={newDate}
                     setNewDate={setNewDate}
                 />
-                <ActionsModal
-                    isEditing={isEditing}
-                    onSave={handleSave}
-                    onCancel={handleCancel}
-                    onEdit={() => setIsEditing(true)}
-                />
+                {/*<ActionsModal*/}
+                {/*    isEditing={isEditing}*/}
+                {/*    onSave={handleSave}*/}
+                {/*    onCancel={handleCancel}*/}
+                {/*    onEdit={() => setIsEditing(true)}*/}
+                {/*/>*/}
             </div>
         </div>);};
 
