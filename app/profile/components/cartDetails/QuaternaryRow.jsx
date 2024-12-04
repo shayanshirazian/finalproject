@@ -16,7 +16,6 @@ const QuaternaryRow = ({ title, value, isEditing, newValue, setNewValue, order, 
                 ) : (
                     <span className="text-green-700 mr-2">{value}</span>
                 )}
-                <EditPenBtn order={order} isEdit={isEditing} onOpenModal={onOpenModal} />
             </span>
         </div>
     );
