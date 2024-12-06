@@ -93,7 +93,6 @@ const Profile = () => {
                 <div className="Upcoming Orders text-gray-600 mt-3 ml-1">
                     <UpcomingOrders orders={orders} onOpenModal={handleOpenModal}/>
                     {/*<UpcomingOrders orders={orders} onOpenModal={upOrderModal}/>*/}
-
                 </div>
 
                 <div>

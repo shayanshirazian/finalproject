@@ -106,9 +106,7 @@ const UpcomingOrders = ({orders, onOpenModal}) => {
                         </div>
                         <div className="Right flex">
                             {/*<OpenDetails onClick={() => handleOpenModal(orders)}/>*/}
-
                             <OpenDetails onClick={() => onOpenModal(orders)}/>
-
                         </div>
                     </div>
                 </div>

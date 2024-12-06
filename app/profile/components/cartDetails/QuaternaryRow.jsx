@@ -1,7 +1,7 @@
 import React from "react";
 import EditPenBtn from "../buttons/EditPenBtn";
 
-const QuaternaryRow = ({ title, value, isEditing, newValue, setNewValue, order, onOpenModal }) => {
+const QuaternaryRow = ({ title, value, isEditing, newValue, setNewValue}) => {
     return (
         <div className="flex justify-between items-center w-full">
             <span className="text-gray-500">{title} :</span>
