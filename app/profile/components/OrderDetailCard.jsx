@@ -1,52 +1,51 @@
-// import React from "react";
-// import Divider from "./cartDetails/Divider";
-// import PrimaryRow from "./cartDetails/PrimaryRow";
-// import SecondaryRow from "./cartDetails/SecondaryRow";
-// import TertiaryRow from "./cartDetails/TertiaryRow";
-// import QuaternaryRow from "./cartDetails/QuaternaryRow";
-// import EditPenBtn from "./buttons/EditPenBtn";
-//
-// const OrderDetailCard = ({order, isEditing, onOpenModal}) => {
-//     console.log(order, "orderDetailCard");
-//     console.log(order.dogName, "order.dogName");
-//     return (
-//         <>
-//             <div className="dogBoxes rounded-lg shadow-md border border-gray-200 m-3">
-//                 <div className="flex flex-col m-5 ">
-//                     <div className="innerContainer flex flex-col">
-//                         <div>
-//                             {/*<PrimaryRow*/}
-//                             {/*    dogName={order.dogName}*/}
-//                             {/*    Status order={order}*/}
-//                             {/*/>*/}
-//                         </div>
-//                         <Divider/>
-//                         <div>
-//                             <SecondaryRow
-//                                 title={"Portions"}
-//                                 value={order.portions}
-//                             />
-//                         </div>
-//                         <Divider/>
-//                         <div>
-//                             <TertiaryRow
-//                                 title={"Recipes"}
-//                                 value={order.recipes}
-//                             />
-//                         </div>
-//                         <Divider/>
-//                         <div className="flex justify-between items-center">
-//                             <QuaternaryRow
-//                                 title="Delivery Date"
-//                                 value={order.deliveryDate}
-//                                 isEditing={isEditing}
-//                                 onOpenModal={onOpenModal}
-//                                 order={order}
-//                             />
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </>)
-// }
-// export default OrderDetailCard;
+import React from "react";
+import Divider from "./cartDetails/Divider";
+
+const OrderDetailCard = ({ order, onOpenModal }) => {
+  console.log(order, "orderDetailCard");
+  console.log(order.dogName, "order.dogName");
+  return (
+    <div className="dogboxes rounded-lg shadow-md border border-gray-200 m-3">
+      <div className="flex justify-between m-2">
+        <span className="text-green-900 mt-2 ml-2 font-bold">
+          {order.dogName}
+        </span>
+        <span className="bg-blue-100 text-blue-500 text-xs rounded-full px-3 py-2">
+          {order.status}
+        </span>
+      </div>
+
+      <Divider />
+
+      <div className="flex justify-between m-2">
+        <span className="text-gray-500 ml-3">Portions: </span>
+        <span className="text-green-700 mr-3">{order.portions}</span>
+      </div>
+
+      <Divider />
+
+      <div className="flex justify-between items-center m-2">
+        <span className="text-gray-500 ml-3">Recipes:</span>
+        <span className="text-green-700 mr-3">{order.recipes}</span>
+      </div>
+
+      <Divider />
+
+      <div className="flex justify-between m-2">
+        <span className="text-gray-500 w-[150px] ml-3">Delivery Date:</span>
+        <div className="flex items-center">
+          <span className="text-green-700 font-bold w-[120px] text-center flex flex-row justify-end">
+            {order.deliveryDate}
+            <img
+              src="/Edit.svg"
+              alt="editbtn"
+              className="h-5 cursor-pointer mx-2 "
+              onClick={() => onOpenModal(order)} // Check if onOpenModal is a function
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default OrderDetailCard;
