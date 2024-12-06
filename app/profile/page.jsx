@@ -115,6 +115,7 @@ const Profile = () => {
 
                 <OrderDetailsModal
                     isOpen={isModalOpen}
+                    onOpenModal={handleOpenModal}
                     onClose={handleCloseModal}
                     onCancel={handleCancelModal}
                     onSave={handleSaveDate}
