@@ -40,7 +40,9 @@ const OrderDetailCard = ({ order, onOpenModal }) => {
               src="/Edit.svg"
               alt="editbtn"
               className="h-5 cursor-pointer mx-2 "
-              onClick={() => onOpenModal(order)} // Check if onOpenModal is a function
+              onClick={() => onOpenModal(order)}
+              //setModalOpen (true) 
+              // Check if onOpenModal is a function
             />
           </span>
         </div>

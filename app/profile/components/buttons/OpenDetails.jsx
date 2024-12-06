@@ -1,9 +1,9 @@
 import React from 'react';
 
-const OpenDetails = ({onClick}) => {
+const OpenDetails = ({}) => {
     return (
         <button className="text-lg font-extrabold text-green-700"
-                onClick={onClick}
+                // onClick={onClick}
         >
             {`>`}
         </button>
