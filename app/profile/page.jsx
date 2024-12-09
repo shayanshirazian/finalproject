@@ -48,8 +48,13 @@ const Profile = () => {
   };
 
   const handleCloseModal = () => {
-    setSelectedOrder({});
+    // console.log("handle close clicked")
+    // setSelectedOrder({});
     setModalOpen(false);
+  };
+  const handleCloseUpcomingModal = () => {
+    // console.log("handle Upcoming close clicked")
+    setUpcomingOrdersModalOpen(false)
   };
   const handleCancelModal = () => {
     setModalOpen(false);
@@ -106,7 +111,7 @@ const Profile = () => {
         orders={orders}
         isOpen={isUpcomingOrdersModalOpen}
         onOpenModal={handleOpenModal}
-        onClose={handleCloseModal}
+        onClose={handleCloseUpcomingModal}
         onCancel={handleCancelModal}
         onSave={handleSaveDate}
       />
