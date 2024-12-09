@@ -111,7 +111,7 @@ const Profile = () => {
         </div>
       </div>
       <UpcomingOrdersModal
-        orders={orders}
+        orders={shippedOrders}
         isOpen={isUpcomingOrdersModalOpen}
         onOpenModal={handleOpenModal}
         onClose={handleCloseUpcomingModal}
