@@ -33,7 +33,7 @@ const ContentModal = ({order,onOpenModal} ) => {
   return (
     <div className="overflow-y-auto max-h-[90vh] p-3">
 
-      <OrderDetailCard order={order} onOpenModal={onOpenModal}/>
+      <OrderDetailCard order={order} onOpenModal={onOpenModal} hasEdit={true}/>
     </div>
   );
 };

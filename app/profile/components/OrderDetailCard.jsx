@@ -1,8 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Divider from "./cartDetails/Divider";
+import EditPenBtn from "./buttons/EditPenBtn";
 
-const OrderDetailCard = ({ order }) => {
+const OrderDetailCard = ({ order, onOpenModal,hasEdit }) => {
+  const handleOpenModal = (order) => {
+    onOpenModal(order);
+  };
   return (
     <div className="dogboxes  m-3">
       <div className="flex justify-between m-2">
@@ -36,9 +40,18 @@ const OrderDetailCard = ({ order }) => {
           <span className="text-green-700 font-bold w-[120px] text-center flex flex-row justify-end mr-3">
             {order.deliveryDate}
           </span>
+          {hasEdit ? (
+            <span>
+              <EditPenBtn
+                order={order}
+                isEdit={true}
+                handleOpenModal={handleOpenModal}
+              />
+            </span>
+          ) : null}
         </div>
       </div>
-      <Divider/>
+      <Divider />
     </div>
   );
 };

@@ -18,7 +18,7 @@ const OrderDetailsModal = ({ isOpen, orders, onOpenModal ,onClose}) => {
             <OrderDetailCard
               order={order}
               onOpenModal={onOpenModal}
-              index={index}
+              hasEdit={false}
             />
           </div>
         ))}
