@@ -88,6 +88,9 @@ const Profile = () => {
   if (loading) return <p className="text-center mt-4">Loading Orders...</p>;
   if (error) return <p className="text-center text-red-500 mt-4">{error}</p>;
 
+  const shippedOrders = orders.filter((order) => order.status === "Shipped");
+  const pendingOrders = orders.filter((order) => order.status === "Pending");
+
   return (
     <div className="MainContainer flex items-center bg-green justify-center mt-10 min-h-screen w-full bg-green-50">
       <div className="InnerContainer flex flex-col  p-5 bg-gray-100 border border-gray-300 rounded-3xl w-full max-w-3xl">
@@ -98,13 +101,13 @@ const Profile = () => {
 
         <div className="Upcoming Orders text-gray-600 mt-3 ml-1">
           <UpcomingOrders
-            orders={orders}
+            orders={shippedOrders}
             setModalOpen={setUpcomingOrdersModalOpen}
           />
         </div>
 
         <div>
-          <FutureOrders orders={orders} onOpenModal={handleOpenModal} />
+          <FutureOrders orders={pendingOrders} onOpenModal={handleOpenModal} />
         </div>
       </div>
       <UpcomingOrdersModal

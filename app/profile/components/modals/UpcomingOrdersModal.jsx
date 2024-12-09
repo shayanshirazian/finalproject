@@ -3,7 +3,7 @@ import HeaderModal from "./HeaderModal";
 import Divider from "../cartDetails/Divider";
 import OrderDetailCard from "../OrderDetailCard";
 
-const OrderDetailsModal = ({ isOpen, orders, onOpenModal ,onClose}) => {
+const OrderDetailsModal = ({ isOpen, orders, onOpenModal, onClose }) => {
   if (!isOpen || !orders) return null;
 
   return (
