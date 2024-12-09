@@ -1,11 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Divider from "./cartDetails/Divider";
 
-const OrderDetailCard = ({ order, onOpenModal }) => {
-  console.log(order, "orderDetailCard");
-  console.log(order.dogName, "order.dogName");
+const OrderDetailCard = ({ order }) => {
   return (
-    <div className="dogboxes rounded-lg shadow-md border border-gray-200 m-3">
+    <div className="dogboxes  m-3">
       <div className="flex justify-between m-2">
         <span className="text-green-900 mt-2 ml-2 font-bold">
           {order.dogName}
@@ -34,17 +33,12 @@ const OrderDetailCard = ({ order, onOpenModal }) => {
       <div className="flex justify-between m-2">
         <span className="text-gray-500 w-[150px] ml-3">Delivery Date:</span>
         <div className="flex items-center">
-          <span className="text-green-700 font-bold w-[120px] text-center flex flex-row justify-end">
+          <span className="text-green-700 font-bold w-[120px] text-center flex flex-row justify-end mr-3">
             {order.deliveryDate}
-            <img
-              src="/Edit.svg"
-              alt="editbtn"
-              className="h-5 cursor-pointer mx-2 "
-              onClick={() => onOpenModal(order)} // Check if onOpenModal is a function
-            />
           </span>
         </div>
       </div>
+      <Divider/>
     </div>
   );
 };
