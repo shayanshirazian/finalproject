@@ -1,9 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import Divider from "./cartDetails/Divider";
-import EditPenBtn from "./buttons/EditPenBtn";
+import Divider from "./Divider";
 
-const OrderDetailCard = ({ order, onOpenModal,hasEdit }) => {
+const OrderDetailCard = ({ order, onOpenModal, hasEdit }) => {
   const handleOpenModal = (order) => {
     onOpenModal(order);
   };
@@ -41,11 +40,12 @@ const OrderDetailCard = ({ order, onOpenModal,hasEdit }) => {
             {order.deliveryDate}
           </span>
           {hasEdit ? (
-            <span>
-              <EditPenBtn
-                order={order}
-                isEdit={true}
-                handleOpenModal={handleOpenModal}
+            <span className="editPenBtn">
+              <img
+                src="/Edit.svg"
+                alt="editbtn"
+                className=" h-5 cursor-pointer"
+                onClick={(isEdit) => (isEdit ? handleOpenModal(order) : null)}
               />
             </span>
           ) : null}

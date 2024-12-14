@@ -1,5 +1,5 @@
 import React from "react";
-import OrderDetailCard from "./OrderDetailCard";
+import OrderDetailCard from "../cartDetails/OrderDetailCard";
 
 const FutureOrders = ({ orders, onOpenModal }) => {
   if (!orders || !Array.isArray(orders)) {
@@ -11,7 +11,11 @@ const FutureOrders = ({ orders, onOpenModal }) => {
       <div className="text-gray-600 mt-3 ml-1">{`Future Orders`}</div>
       {orders.map((order, index) => (
         <div key={index}>
-          <OrderDetailCard order={order} onOpenModal={onOpenModal} hasEdit={true} />
+          <OrderDetailCard
+            order={order}
+            onOpenModal={onOpenModal}
+            hasEdit={true}
+          />
         </div>
       ))}
     </>

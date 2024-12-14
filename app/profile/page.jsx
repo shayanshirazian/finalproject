@@ -1,12 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import "../../app/api/dogs/route";
-import TabsSwitch from "./components/buttons/TabsSwitch";
-import BackBtn from "./components/buttons/BackBtn";
-import UpcomingOrders from "./components/UpcomingOrders";
-import OrderDetailsModal from "./components/modals/OrderDetailsModal";
-import FutureOrders from "./components/FutureOrders";
-import UpcomingOrdersModal from "./components/modals/UpcomingOrdersModal";
+import TabsSwitch from "./components/cartDetails/TabsSwitch";
+import UpcomingOrders from "./components/Upcoming/UpcomingOrders";
+import OrderDetailsModal from "./components/Future/OrderDetailsModal";
+import FutureOrders from "./components/Future/FutureOrders";
+import UpcomingOrdersModal from "./components/Upcoming/UpcomingOrdersModal";
 
 const Profile = () => {
   const [orders, setOrders] = useState([]);
@@ -48,13 +47,10 @@ const Profile = () => {
   };
 
   const handleCloseModal = () => {
-    // console.log("handle close clicked")
-    // setSelectedOrder({});
     setModalOpen(false);
   };
   const handleCloseUpcomingModal = () => {
-    // console.log("handle Upcoming close clicked")
-    setUpcomingOrdersModalOpen(false)
+    setUpcomingOrdersModalOpen(false);
   };
   const handleCancelModal = () => {
     setModalOpen(false);
@@ -95,7 +91,9 @@ const Profile = () => {
     <div className="MainContainer flex items-center bg-green justify-center mt-10 min-h-screen w-full bg-green-50">
       <div className="InnerContainer flex flex-col  p-5 bg-gray-100 border border-gray-300 rounded-3xl w-full max-w-3xl">
         <div className="flex mb-4 items-center ">
-          <BackBtn />
+          <button className="backBtn text-green-700 m-5">
+            <img width="20px" src="/left-arrow.svg" alt="back btn" />
+          </button>
           <TabsSwitch />
         </div>
 
@@ -115,8 +113,6 @@ const Profile = () => {
         isOpen={isUpcomingOrdersModalOpen}
         onOpenModal={handleOpenModal}
         onClose={handleCloseUpcomingModal}
-        onCancel={handleCancelModal}
-        onSave={handleSaveDate}
       />
 
       <OrderDetailsModal

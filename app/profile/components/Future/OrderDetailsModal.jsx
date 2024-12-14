@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import HeaderModal from "./HeaderModal";
+import HeaderModal from "../cartDetails/HeaderModal";
 import ActionsModal from "./ActionsModal";
 import Divider from "../cartDetails/Divider";
 
